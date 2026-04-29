@@ -45,10 +45,10 @@ public:
         : topLeft(x1, y1), bottomRight(x2, y2) {}
 
     // TODO 7: const getWidth()
-    double getWidth() const { return (bottomRight.getX() - topLeft.getX()); }
+    double getWidth() const { return (bottomRight.getX() + topLeft.getX()); }
 
     // TODO 8: const getHeight()
-    double getHeight() const { return (topLeft.getY() - bottomRight.getY()); }
+    double getHeight() const { return (topLeft.getY() + bottomRight.getY()); }
 
     // TODO 9: const getArea()
     double getArea() const { return getWidth() * getHeight(); }
