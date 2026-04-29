@@ -38,28 +38,30 @@ class Rectangle {
 private:
     Point topLeft;
     Point bottomRight;
+
 public:
     // TODO 6: constructor with member initializer list
     Rectangle(double x1, double y1, double x2, double y2)
-        : topLeft(x1,y1), bottomRight(x2,y2) {}  // stub — fix initializer
+        : topLeft(x1, y1), bottomRight(x2, y2) {}
 
     // TODO 7: const getWidth()
-    double getWidth() const { return topLeft.getX() + bottomRight.getX(); }  // stub
+    double getWidth() const { return (bottomRight.getX() - topLeft.getX()); }
 
     // TODO 8: const getHeight()
-    double getHeight() const { return topLeft.getY() + bottomRight.getY(); }  // stub
+    double getHeight() const { return (topLeft.getY() - bottomRight.getY()); }
 
     // TODO 9: const getArea()
-    double getArea() const { return getWidth() * getHeight(); }  // stub
+    double getArea() const { return getWidth() * getHeight(); }
 
     // TODO 10: const display()
-    void display() const { std::cout << "Width: " << getWidth()
-                                     << "Height: " << getHeight()
-                                     << "Area: " << getArea();
+    void display() const {
+        std::cout << "Width: " << getWidth()
+                  << " Height: " << getHeight()
+                  << " Area: " << getArea() << std::endl;
     }
-
+    
     // TODO 11: declare isSameSize as friend function
-    friend class isSameSize;
+    friend bool isSameSize(const Rectangle& r1, const Rectangle& r2);
 };
 
 
